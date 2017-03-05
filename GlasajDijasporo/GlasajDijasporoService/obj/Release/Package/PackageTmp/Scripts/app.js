@@ -5,6 +5,8 @@
 
 var submitButton = document.getElementById("submitApplication");
 var signatureField = document.getElementById("Signature");
+var embassyEmail = document.getElementById("embassyEmail");
+var votingLocation = document.getElementById("votingLocation");
 
 function resizeCanvas() {
     var ratio = Math.max(window.devicePixelRatio || 1, 1);
@@ -26,3 +28,7 @@ clearButton.addEventListener("click", function (event) {
 submitButton.addEventListener("click", function (event) {
     signatureField.value = signaturePad.toDataURL();
 });
+
+function votingLocationSelected() {
+    embassyEmail.innerHTML = votingLocation.value.split('|')[1];
+}

@@ -17,13 +17,13 @@
             </br>
             </br>
             <li>
-                <label class="headerStyle">Registracija za glasanje iz inostranstva u tri koraka</label><br />
+                <label class="headerStyle">Laka registracija za glasanje iz inostranstva u tri koraka</label><br />
             </li>
             <li>
-                <label class="stepStyle">1. Fotografiši telefonom obe strane boravišne/radne dozvole.</label><br/>
+                <label class="stepStyle">1. Fotografiši telefonom pasoš.</label><br/>
             </li>
             <li>
-                <label class="stepStyle">2. Popuni podatke za upis u birački spisak u inostranstvu i pritisni "Popuni formular"</label><br />
+                <label class="stepStyle">2. Popuni podatke za upis u birački spisak u inostranstvu i pritisni dugme "Popuni formular".</label><br />
             </li>
             <li>
                 <label>Ime i prezime <span class="required">*</span></label>
@@ -62,7 +62,80 @@
             </li>
             <li>
                 <label>Naziv strane države <span class="required">*</span></label>
-                <input class="field-long" type="text" name="ForeignCountryName" />
+                <select name="ForeignCountryName" class="field-select">
+                    <option value="Albanija">Albanija</option>
+                    <option value="Alžir">Alžir</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Australija">Australija, Kanbera</option>
+                    <option value="Austrija">Austrija, Beč</option>
+                    <option value="Azerbejdžan">Azerbejdžan</option>
+                    <option value="Belgija">Belgija</option>
+                    <option value="Belorusija">Belorusija</option>
+                    <option value="Bosna i Hercegovina">Bosna i Hercegovina, Banja Luka</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Bugarska">Bugarska</option>
+                    <option value="Češka Republika">Češka Republika</option>
+                    <option value="Crna Gora">Crna Gora, Herceg Novi</option>
+                    <option value="Danska">Danska</option>
+                    <option value="Egipat">Egipat</option>
+                    <option value="Etiopija">Etiopija</option>
+                    <option value="Finska">Finska</option>
+                    <option value="Francuska">Francuska, Pariz</option>
+                    <option value="Grčka">Grčka, Atina</option>
+                    <option value="Holandija">Holandija</option>
+                    <option value="Hrvatska">Hrvatska, Rijeka</option>
+                    <option value="Indija">Indija</option>
+                    <option value="Indonezija">Indonezija</option>
+                    <option value="Irak">Irak</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Italija">Italija, Milano</option>
+                    <option value="Italija">Italija, Rim</option>
+                    <option value="Italija">Italija, Trst</option>
+                    <option value="Izrael">Izrael</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Južnoafrička Republika">Južnoafrička Republika</option>
+                    <option value="Kanada">Kanada, Otava</option>
+                    <option value="Kanada">Kanada, Toronto</option>
+                    <option value="Katar">Katar</option>
+                    <option value="Kazahstan">Kazahstan</option>
+                    <option value="Kenija">Kenija</option>
+                    <option value="Kina, Narodna Republika">Kina, Narodna Republika</option>
+                    <option value="Kipar">Kipar</option>
+                    <option value="Kongo">Kongo, DR</option>
+                    <option value="Koreja">Koreja, Republika</option>
+                    <option value="Kuba">Kuba</option>
+                    <option value="Kuvajt">Kuvajt</option>
+                    <option value="Liban">Liban</option>
+                    <option value="Libija">Libija</option>
+                    <option value="Mađarska">Mađarska</option>
+                    <option value="Makedonija">Makedonija</option>
+                    <option value="Maroko">Maroko</option>
+                    <option value="Meksiko">Meksiko</option>
+                    <option value="Mjanmar">Mjanmar</option>
+                    <option value="Nemačka">Nemačka</option>
+                    <option value="Nigerija">Nigerija</option>
+                    <option value="Norveška">Norveška</option>
+                    <option value="Poljska">Poljska</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Rumunija">Rumunija</option>
+                    <option value="Rusija">Rusija</option>
+                    <option value="Saudijska Arabija">Saudijska Arabija</option>
+                    <option value="Sirija">Sirija</option>
+                    <option value="Sjedinjene Američke Države">Sjedinjene Američke Države</option>
+                    <option value="Slovačka">Slovačka</option>
+                    <option value="Slovenija">Slovenija</option>
+                    <option value="Španija">Španija</option>
+                    <option value="Švajcarska">Švajcarska</option>
+                    <option value="Švedska">Švedska</option>
+                    <option value="Tunis">Tunis</option>
+                    <option value="Turska">Turska, Ankara</option>
+                    <option value="Ujedinjeni Arapski Emirati">Ujedinjeni Arapski Emirati</option>
+                    <option value="Ukrajina">Ukrajina</option>
+                    <option value="Vatikan">Vatikan</option>
+                    <option value="Velika Britanija">Velika Britanija</option>
+                    <option value="Zambija">Zambija</option>
+                </select>
             </li>
             <li>
                 <label>Adresa u inostranstvu <span class="required">*</span></label>
@@ -70,10 +143,103 @@
             </li>
             <li>
                 <label>Mesto glasanja <span class="required">*</span></label>
-                <input class="field-long" type="text" name="VotingLocation" />
+                <select name="VotingLocation" id="votingLocation" class="field-select" onchange="votingLocationSelected()">
+                    <option value="Ambasada Srbije u Albaniji|ambatira@icc-al.org">Ambasada Srbije u Albaniji</option>
+                    <option value="Ambasada Srbije u Alžiru|ambasada@ambserbie-alger.com">Ambasada Srbije u Alžiru</option>
+                    <option value="Ambasada Srbije u Angoli|serbiaemb@netcabo.co.ao">Ambasada Srbije u Angoli</option>
+                    <option value="Ambasada Srbije u Argentini|consulado@serbembaires.com.ar">Ambasada Srbije u Argentini</option>
+                    <option value="Ambasada Srbije u Australiji, Kanbera|embassy.canberra@serbia.org.au">Ambasada Srbije u Australiji, Kanbera</option>
+                    <option value="Konzulat Srbije u Australiji, Sidnej|gkrssid@optusnet.com.au">Konzulat Srbije u Australiji, Sidnej</option>
+                    <option value="Ambasada Srbije u Austriji, Beč|embassy.vienna@mfa.rs">Ambasada Srbije u Austriji, Beč</option>
+                    <option value="Konzulat Srbije u Austriji, Salcburg|genconsulate.salzburg@mfa.rs">Konzulat Srbije u Austriji, Salcburg</option>
+                    <option value="Ambasada Srbije u Azerbejdžanu|serbianembassy.baku@azeurotel.com">Ambasada Srbije u Azerbejdžanu</option>
+                    <option value="Ambasada Srbije u Belgiji|embassy.brussels@mfa.rs">Ambasada Srbije u Belgiji</option>
+                    <option value="Ambasada Srbije u Belorusiji|embassy.minsk@mfa.rs">Ambasada Srbije u Belorusiji</option>
+                    <option value="Konzulat Srbije u Bosni i Hercegovini, Banja Luka|konzulat.bl@mfa.rs">Konzulat Srbije u Bosni i Hercegovini, Banja Luka</option>
+                    <option value="Konzulat Srbije u Bosni i Hercegovini, Mostar|gk.mostar@mfa.rs">Konzulat Srbije u Bosni i Hercegovini, Mostar</option>
+                    <option value="Ambasada Srbije u Bosni i Hercegovini, Sarajevo|srbamba@bih.net.ba">Ambasada Srbije u Bosni i Hercegovini, Sarajevo</option>
+                    <option value="Ambasada Srbije u Brazilu|embaixadaservia@terra.com.br">Ambasada Srbije u Brazilu</option>
+                    <option value="Ambasada Srbije u Bugarskoj|sofia@emb-serbia.com">Ambasada Srbije u Bugarskoj</option>
+                    <option value="Ambasada Srbije u Češkoj Republici|konzularno.prag@mfa.rs">Ambasada Srbije u Češkoj Republici</option>
+                    <option value="Konzulat Srbije u Crnoj Gori, Herceg Novi|gkh.novi@mfa.rs">Konzulat Srbije u Crnoj Gori, Herceg Novi</option>
+                    <option value="Ambasada Srbije u Crnoj Gori, Podgorica|embassy.podgorica@mfa.rs">Ambasada Srbije u Crnoj Gori, Podgorica</option>
+                    <option value="Ambasada Srbije u Danskoj|serbianemb@city.dk">Ambasada Srbije u Danskoj</option>
+                    <option value="Ambasada Srbije u Egipatu|serbia@serbiaeg.com">Ambasada Srbije u Egipatu</option>
+                    <option value="Ambasada Srbije u Etiopiji|serbambadis@yahoo.com">Ambasada Srbije u Etiopiji</option>
+                    <option value="Ambasada Srbije u Finskoj|serbia@kolumbus.fi">Ambasada Srbije u Finskoj</option>
+                    <option value="Ambasada Srbije u Francuskoj, Pariz|konzularno.pariz@mfa.rs">Ambasada Srbije u Francuskoj, Pariz</option>
+                    <option value="Konzulat Srbije u Francuskoj, Strazbur|consulate.strasbourg@mfa.rs">Konzulat Srbije u Francuskoj, Strazbur</option>
+                    <option value="Ambasada Srbije u Grčkoj, Atina|konzulat@embassyofserbia.gr">Ambasada Srbije u Grčkoj, Atina</option>
+                    <option value="Konzulat Srbije u Grčkoj, Solun|srbcons@otenet.gr">Konzulat Srbije u Grčkoj, Solun</option>
+                    <option value="Ambasada Srbije u Holandiji|embassy.hague@mfa.rs">Ambasada Srbije u Holandiji</option>
+                    <option value="Konzulat Srbije u Hrvatskoj, Rijeka|konzulat-rijeka@ri.t-com.hr">Konzulat Srbije u Hrvatskoj, Rijeka</option>
+                    <option value="Konzulat Srbije u Hrvatskoj, Vukovar|generalni.konzulat@gk-srbije-vukovar.hr">Konzulat Srbije u Hrvatskoj, Vukovar</option>
+                    <option value="Ambasada Srbije u Hrvatskoj, Zagreb|ambasada@ambasada-srbije.hr">Ambasada Srbije u Hrvatskoj, Zagreb</option>
+                    <option value="Ambasada Srbije u Indiji|embassyofserbiadelhi@hotmail.com">Ambasada Srbije u Indiji</option>
+                    <option value="Ambasada Srbije u Indoneziji|embjakarta@serbian-embassy.org">Ambasada Srbije u Indoneziji</option>
+                    <option value="Ambasada Srbije u Iraku|embsrbag@yahoo.com">Ambasada Srbije u Iraku</option>
+                    <option value="Ambasada Srbije u Iranu|serbembteh@pol.ir">Ambasada Srbije u Iranu</option>
+                    <option value="Konzulat Srbije u Italiji, Milano|info@gkrsmi.it">Konzulat Srbije u Italiji, Milano</option>
+                    <option value="Ambasada Srbije u Italiji, Rim|konzularno@ambroma.com">Ambasada Srbije u Italiji, Rim</option>
+                    <option value="Konzulat Srbije u Italiji, Trst|gkrstrst@spin.it">Konzulat Srbije u Italiji, Trst</option>
+                    <option value="Ambasada Srbije u Izraelu|srbambil@netvision.net.il">Ambasada Srbije u Izraelu</option>
+                    <option value="Ambasada Srbije u Japanu|embassy.tokyo@mfa.rs">Ambasada Srbije u Japanu</option>
+                    <option value="Ambasada Srbije u Južnoafričkoj Republici|info@srbembassy.org.za">Ambasada Srbije u Južnoafričkoj Republici</option>
+                    <option value="Ambasada Srbije u Kanadi, Otava|diplomat@serbianembassy.ca">Ambasada Srbije u Kanadi, Otava</option>
+                    <option value="Konzulat Srbije u Kanadi, Toronto|konzulat@gktoronto.com">Konzulat Srbije u Kanadi, Toronto</option>
+                    <option value="Ambasada Srbije u Kataru|embsrbqat@gmail.com">Ambasada Srbije u Kataru</option>
+                    <option value="Ambasada Srbije u Kazahstanu|ambasadarsastana@mail.ru">Ambasada Srbije u Kazahstanu</option>
+                    <option value="Ambasada Srbije u Keniji|nairobi@embassyofserbia.or.ke">Ambasada Srbije u Keniji</option>
+                    <option value="Ambasada Srbije u Kini, Narodna Republika, Peking|embserbia@embserbia.cn">Ambasada Srbije u Kini, Narodna Republika, Peking</option>
+                    <option value="Konzulat Srbije u Kini, Narodna Republika, Šangaj|consulate@srbshanghai.org">Konzulat Srbije u Kini, Narodna Republika, Šangaj</option>
+                    <option value="Ambasada Srbije na Kiparu|nicosia@serbia.org.cy">Ambasada Srbije na Kiparu</option>
+                    <option value="Ambasada Srbije u Kongu, DR|serbambakin@gmail.com">Ambasada Srbije u Kongu, DR</option>
+                    <option value="Ambasada Srbije u Koreji, Republika|embserbseul@yahoo.com">Ambasada Srbije u Koreji, Republika</option>
+                    <option value="Ambasada Srbije na Kubi|ambsrbhav@enet.cu">Ambasada Srbije na Kubi</option>
+                    <option value="Ambasada Srbije u Kuvajtu|serbkonzkw@gmail.com">Ambasada Srbije u Kuvajtu</option>
+                    <option value="Ambasada Srbije u Libanu|embassy@serbia-beirut.rs">Ambasada Srbije u Libanu</option>
+                    <option value="Ambasada Srbije u Libiji|serbianembassy_tripoli@yahoo.com">Ambasada Srbije u Libiji</option>
+                    <option value="Ambasada Srbije u Mađarskoj|budapest@serbiaemb.t-online.hu">Ambasada Srbije u Mađarskoj</option>
+                    <option value="Ambasada Srbije u Makedoniji|srbamb@unet.com.mk">Ambasada Srbije u Makedoniji</option>
+                    <option value="Ambasada Srbije u Maroku|ambrsrabat@gmail.com">Ambasada Srbije u Maroku</option>
+                    <option value="Ambasada Srbije u Meksiku|embajadaserbia@alestra.net.mx">Ambasada Srbije u Meksiku</option>
+                    <option value="Ambasada Srbije u Mjanmaru|serbemb@yangon.net.mm">Ambasada Srbije u Mjanmaru</option>
+                    <option value="Ambasada Srbije u Nemačkoj, Berlin|info@botschaft-serbien.de">Ambasada Srbije u Nemačkoj, Berlin</option>
+                    <option value="Konzulat Srbije u Nemačkoj, Diseldorf|info@gksrbijedis.de">Konzulat Srbije u Nemačkoj, Diseldorf</option>
+                    <option value="Konzulat Srbije u Nemačkoj, Frankfurt|info@gksrbfra.de">Konzulat Srbije u Nemačkoj, Frankfurt</option>
+                    <option value="Konzulat Srbije u Nemačkoj, Hamburg|gk_hamburg@web.de">Konzulat Srbije u Nemačkoj, Hamburg</option>
+                    <option value="Konzulat Srbije u Nemačkoj, Minhen|gk.muenchen@mfa.rs">Konzulat Srbije u Nemačkoj, Minhen</option>
+                    <option value="Konzulat Srbije u Nemačkoj, Štutgart|gk-stutgart@t-online.de">Konzulat Srbije u Nemačkoj, Štutgart</option>
+                    <option value="Ambasada Srbije u Nigeriji|serbconsabuja@gmail.com">Ambasada Srbije u Nigeriji</option>
+                    <option value="Ambasada Srbije u Norveškoj|ambasada@serbianembassy.no">Ambasada Srbije u Norveškoj</option>
+                    <option value="Ambasada Srbije u Poljskoj|embassy.warsaw@mfa.rs">Ambasada Srbije u Poljskoj</option>
+                    <option value="Ambasada Srbije u Portugalu|serviaemba@netcabo.pt">Ambasada Srbije u Portugalu</option>
+                    <option value="Ambasada Srbije u Rumuniji, Bukurešt|info@ambserbia.ro">Ambasada Srbije u Rumuniji</option>
+                    <option value="Konzulat Srbije u Rumuniji, Temišvar|gktemisvar@gmail.com">Konzulat Srbije u Rumuniji</option>
+                    <option value="Ambasada Srbije u Rusiji|konzularno.moskva@mfa.rs">Ambasada Srbije u Rusiji</option>
+                    <option value="Ambasada Srbije u Saudijskoj Arabiji|embsrb.riyadh@yahoo.com">Ambasada Srbije u Saudijskoj Arabiji</option>
+                    <option value="Ambasada Srbije u Siriji|ambasada@srbija-damask.org">Ambasada Srbije u Siriji</option>
+                    <option value="Konzulat Srbije u Sjedinjenim Američkim Državama, Čikago|info@scgchicago.org">Konzulat Srbije u SAD, Čikago</option>
+                    <option value="Konzulat Srbije u Sjedinjenim Američkim Državama, Njujork|office@serbiaconsulatenyc.com">Konzulat Srbije u SAD, Njujork</option>
+                    <option value="Ambasada Srbije u Sjedinjenim Američkim Državama, Vašington|consular@serbiaembusa.org">Ambasada Srbije u SAD, Vašington</option>
+                    <option value="Ambasada Srbije u Slovačkoj|embassy.bratislava@mfa.rs">Ambasada Srbije u Slovačkoj</option>
+                    <option value="Ambasada Srbije u Sloveniji|embassy.ljubljana@mfa.rs">Ambasada Srbije u Sloveniji</option>
+                    <option value="Ambasada Srbije u Španiji|office@embajada-serbia.es">Ambasada Srbije u Španiji</option>
+                    <option value="Ambasada Srbije u Švajcarskoj, Bern|info@ambasadasrbije.ch">Ambasada Srbije u Švajcarskoj, Bern</option>
+                    <option value="Konzulat Srbije u Švajcarskoj, Cirih|info@konzulat.ch">Konzulat Srbije u Švajcarskoj, Cirih</option>
+                    <option value="Ambasada Srbije u Švedskoj|serbiaemb@telia.com">Ambasada Srbije u Švedskoj</option>
+                    <option value="Ambasada Srbije u Tunisu|amb.serbia@gnet.tn">Ambasada Srbije u Tunisu</option>
+                    <option value="Ambasada Srbije u Turskoj, Ankara|embserank@gmail.com">Ambasada Srbije u Turskoj, Ankara</option>
+                    <option value="Konzulat Srbije u Turskoj, Instanbul|konzulat.istanbul@mfa.rs">Konzulat Srbije u Turskoj, Instanbul</option>
+                    <option value="Ambasada Srbije u Ujedinjenim Arapskim Emiratima|embsruae@gmail.com">Ambasada Srbije u Ujedinjenim Arapskim Emiratima</option>
+                    <option value="Ambasada Srbije u Ukrajini|konzrs@ukr.net">Ambasada Srbije u Ukrajini</option>
+                    <option value="Ambasada Srbije u Vatikanu|amb.serbia.vatican@ambroma.com">Ambasada Srbije u Vatikanu</option>
+                    <option value="Ambasada Srbije u Velikoj Britaniji|london@serbianembassy.org.uk">Ambasada Srbije u Velikoj Britaniji</option>
+                    <option value="Ambasada Srbije u Zambiji|serbia.lusaka@iconnect.zm">Ambasada Srbije u Zambiji</option>
+                </select>
             </li>
             <li>
-                <label>Trenutni grad u kome se nalazite <span class="required">*</span></label>
+                <label>Trenutno mesto u kome se nalazite <span class="required">*</span></label>
                 <input class="field-long" type="text" name="CurrentLocation" />
             </li>
             <li>
@@ -102,7 +268,7 @@
                 <br />
             </li>
             <li>
-                <label class="stepStyle-bottom">3. Pošalji popunjen formular zajedno sa fotografisanom boravišnom/radnom dozvolom na email adresu svoje ambasade/konzulata.</label>
+                <label class="stepStyle">3. Pošalji popunjen formular i fotografiju pasoša na email adresu ambasade/konzulata: <span class="required"><label id="embassyEmail" /></label></span></label>
                 <br />
             </li>
             <li>
@@ -117,6 +283,13 @@
                     <li><a href="mailto:?subject=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&body=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona:%20http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Send email"><img alt="Send email" src="~/Content/images/Email.png"></a></li>
                 </ul>
             </li>
+            <li>
+                <br />
+                <br />
+                <label class="stepStyle-bottom">Ovo je open-source projekat i source code možeš naći na <a href="https://github.com/bdjukic/glasajDijasporo">Githubu</a>.</label>
+                <br />
+                <label class="stepStyle-bottom">Primedbe i sugestije slati na bdjukic[at]gmail.com.</label>
+             </li>
         </ul>
         <input type="hidden" name="Signature" id="Signature" />
     </form>

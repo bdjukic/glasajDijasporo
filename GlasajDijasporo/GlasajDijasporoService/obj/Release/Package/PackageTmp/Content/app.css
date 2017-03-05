@@ -9,7 +9,7 @@
     margin:10px auto;
     text-align: center;
     font-weight: normal;
-    font: 14px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 .form-style-1 {
@@ -89,14 +89,14 @@
     }
 
     .form-style-1 input[type=submit], .form-style-1 input[type=button] {
-        background: #4691A4;
+        background: #000000;
         padding: 8px 15px 8px 15px;
         border: none;
         color: #fff;
     }
 
         .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover {
-            background: #4691A4;
+            background: #000000;
             box-shadow:none;
             -moz-box-shadow:none;
             -webkit-box-shadow:none;

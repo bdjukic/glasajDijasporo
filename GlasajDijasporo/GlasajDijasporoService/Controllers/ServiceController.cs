@@ -81,9 +81,11 @@ namespace GlasajDijasporoService.Controllers
                     yCord -= 38;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.ForeignCountryAddress, xCord, yCord, 0);
 
+                    content.SetFontAndSize(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, false), 12f);
                     yCord -= 48;
-                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.VotingLocation, xCord, yCord, 0);
+                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.VotingLocation.Split('|').FirstOrDefault(), xCord, yCord, 0);
 
+                    content.SetFontAndSize(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, false), 14f);
                     yCord -= 40;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.CurrentLocation, xCord - 163, yCord, 0);
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, DateTime.Now.ToString("dd. MM. yyyy."), xCord - 60, yCord, 0);

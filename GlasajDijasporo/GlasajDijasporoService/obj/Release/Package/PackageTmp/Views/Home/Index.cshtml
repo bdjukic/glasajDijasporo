@@ -2,9 +2,29 @@
 <link rel="stylesheet" href="~/Content/app.css">
 
 <div class="row">
-    <h2>Zahtev za upis u birački spisak u inostranstvu</h2>
     <form class="form-container" action="/api/service/" method="post" id="applicationForm">
         <ul class="form-style-1">
+            <li>
+                <ul class="share-buttons">  
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fglasajizinostranstva.com&t=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="~/Content/images/Facebook.png"></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fglasajizinostranstva.com&text=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona:%20http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Tweet"><img alt="Tweet" src="~/Content/images/Twitter.png"></a></li>
+                    <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="~/Content/images/Google.png"></a></li>
+                    <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fglasajizinostranstva.com&title=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="~/Content/images/Reddit.png"></a></li>
+                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fglasajizinostranstva.com&title=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&summary=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&source=http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Share on LinkedIn"><img alt="Share on LinkedIn" src="~/Content/images/LinkedIn.png"></a></li>
+                    <li><a href="mailto:?subject=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&body=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona:%20http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Send email"><img alt="Send email" src="~/Content/images/Email.png"></a></li>
+                </ul>
+            </li>
+            </br>
+            </br>
+            <li>
+                <label class="headerStyle">Registracija za glasanje iz inostranstva u tri koraka</label><br />
+            </li>
+            <li>
+                <label class="stepStyle">1. Fotografiši telefonom obe strane boravišne/radne dozvole.</label><br/>
+            </li>
+            <li>
+                <label class="stepStyle">2. Popuni podatke za upis u birački spisak u inostranstvu i pritisni "Popuni formular"</label><br />
+            </li>
             <li>
                 <label>Ime i prezime <span class="required">*</span></label>
                 <input class="field-long" type="text" name="FirstLastName" />
@@ -26,11 +46,11 @@
             </li>
             <li>
                 <label>JMBG <span class="required">*</span></label>
-                <input class="field-long" type="text" name="PersonalId" />
+                <input class="field-long" type="number" name="PersonalId" />
             </li>
             <li>
                 <label>Broj pasoša <span class="required">*</span></label>
-                <input class="field-long" type="text" name="PassportId" />
+                <input class="field-long" type="number" name="PassportId" />
             </li>
             <li>
                 <label>Adresa prebivališta u Srbiji <span class="required">*</span></label>
@@ -65,20 +85,37 @@
                 <input class="field-long" type="text" name="Email" />
             </li>
             <li>
-                <input class="submit-button" id="submitApplication" type="submit" value="Prijavi se" />
-            </li>
-            <li>
                 <div id="signature-pad" class="m-signature-pad">
                     <div class="m-signature-pad--body">
                         <canvas id="signatureCanvas"></canvas>
                     </div>
                     <div class="m-signature-pad--footer">
                         <div class="description">Potpis</div>
-                        <div class="left">
-                            <button type="button" class="button clear" data-action="clear">Obriši</button>
-                        </div>
+                        <button type="button" class="left" data-action="clear">Obriši</button>
                     </div>
                 </div>
+                <br />
+            </li>
+            <li>
+                <input id="submitApplication" type="submit" value="Popuni formular" />
+                <br />
+                <br />
+            </li>
+            <li>
+                <label class="stepStyle-bottom">3. Pošalji popunjen formular zajedno sa fotografisanom boravišnom/radnom dozvolom na email adresu svoje ambasade/konzulata.</label>
+                <br />
+            </li>
+            <li>
+                </br>
+                </br>
+                <ul class="share-buttons">
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fglasajizinostranstva.com&t=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="~/Content/images/Facebook.png"></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fglasajizinostranstva.com&text=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona:%20http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Tweet"><img alt="Tweet" src="~/Content/images/Twitter.png"></a></li>
+                    <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="~/Content/images/Google.png"></a></li>
+                    <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fglasajizinostranstva.com&title=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="~/Content/images/Reddit.png"></a></li>
+                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fglasajizinostranstva.com&title=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&summary=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&source=http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Share on LinkedIn"><img alt="Share on LinkedIn" src="~/Content/images/LinkedIn.png"></a></li>
+                    <li><a href="mailto:?subject=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona&body=Registracija%20za%20glasanje%20iz%20inostranstva%20preko%20telefona:%20http%3A%2F%2Fglasajizinostranstva.com" target="_blank" title="Send email"><img alt="Send email" src="~/Content/images/Email.png"></a></li>
+                </ul>
             </li>
         </ul>
         <input type="hidden" name="Signature" id="Signature" />

@@ -1,69 +1,87 @@
 ﻿<link rel="stylesheet" href="~/Content/signature-pad.css">
+<link rel="stylesheet" href="~/Content/app.css">
 
-<div class="jumbotron">
-    <h1>Glasaj dijasporo</h1>
-</div>
 <div class="row">
-    <h2>Licni podaci</h2>
+    <h2>Zahtev za upis u birački spisak u inostranstvu</h2>
     <form class="form-container" action="/api/service/" method="post" id="applicationForm">
-        <div class="form-title">Ime i prezime</div>
-        <input class="form-field" type="text" name="FirstLastName" /><br />
-
-        <div class="form-title">Datum i mesto rodjenja</div>
-        <input class="form-field" type="text" name="BirthPlaceDate" /><br />
-        
-        <div class="form-title">Pol</div>
-        <input class="form-field" type="text" name="Gender" /><br />
-        
-        <div class="form-title">Ime jednog od roditelja</div>
-        <input class="form-field" type="text" name="ParentName" /><br />
-        
-        <div class="form-title">JMBG</div>
-        <input class="form-field" type="text" name="PersonalId" /><br />
-        
-        <div class="form-title">Broj pasosa</div>
-        <input class="form-field" type="text" name="PassportId" /><br />
-        
-        <div class="form-title">Adresa prebivalista u Srbiji</div>
-        <input class="form-field" type="text" name="HomeCountryAddress" /><br />
-        
-        <div class="form-title">Adresa prebivalista za internno raseljena lica</div>
-        <input class="form-field" type="text" name="TemporaryAddress" /><br />
-        
-        <div class="form-title">Naziv strane drzave</div>
-        <input class="form-field" type="text" name="ForeignCountryName" /><br />
-        
-        <div class="form-title">Adresa u inostranstvu</div>
-        <input class="form-field" type="text" name="ForeignCountryAddress" /><br />
-        
-        <div class="form-title">Mesto glasanja</div>
-        <input class="form-field" type="text" name="VotingLocation" /><br />
-
-        <div class="form-title">Trenutni grad u kome se nalazite</div>
-        <input class="form-field" type="text" name="CurrentLocation" /><br />
-
-        <div class="form-title">Broj telefona</div>
-        <input class="form-field" type="text" name="PhoneNumber" /><br />
-
-        <div class="form-title">Email</div>
-        <input class="form-field" type="text" name="Email" /><br />
-
-        <input type="hidden" name="Signature" id="Signature" /><br />
-        
-        <div class="submit-container">
-            <input class="submit-button" id="submitApplication" type="submit" value="Prijavi se" />
-        </div>
-        <div id="signature-pad" class="m-signature-pad">
-            <div class="m-signature-pad--body">
-                <canvas id="signatureCanvas"></canvas>
-            </div>
-            <div class="m-signature-pad--footer">
-                <div class="description">Potpis</div>
-                <div class="left">
-                    <button type="button" class="button clear" data-action="clear">Obrisi</button>
+        <ul class="form-style-1">
+            <li>
+                <label>Ime i prezime <span class="required">*</span></label>
+                <input class="field-long" type="text" name="FirstLastName" />
+            </li>
+            <li>
+                <label>Datum i mesto rođenja <span class="required">*</span></label>
+                <input class="field-long" type="text" name="BirthPlaceDate" />
+            </li>
+            <li>
+                <label>Pol</label>
+                <select name="Gender" class="field-select">
+                    <option value="Muški">Muški</option>
+                    <option value="Ženski">Ženski</option>
+                </select>
+            </li>
+            <li>
+                <label>Ime jednog od roditelja <span class="required">*</span></label>
+                <input class="field-long" type="text" name="ParentName" />
+            </li>
+            <li>
+                <label>JMBG <span class="required">*</span></label>
+                <input class="field-long" type="text" name="PersonalId" />
+            </li>
+            <li>
+                <label>Broj pasoša <span class="required">*</span></label>
+                <input class="field-long" type="text" name="PassportId" />
+            </li>
+            <li>
+                <label>Adresa prebivališta u Srbiji <span class="required">*</span></label>
+                <input class="field-long" type="text" name="HomeCountryAddress" />
+            </li>
+            <li>
+                <label>Adresa prebivališta za internno raseljena lica</label>
+                <input class="field-long" type="text" name="TemporaryAddress" />
+            </li>
+            <li>
+                <label>Naziv strane države <span class="required">*</span></label>
+                <input class="field-long" type="text" name="ForeignCountryName" />
+            </li>
+            <li>
+                <label>Adresa u inostranstvu <span class="required">*</span></label>
+                <input class="field-long" type="text" name="ForeignCountryAddress" />
+            </li>
+            <li>
+                <label>Mesto glasanja <span class="required">*</span></label>
+                <input class="field-long" type="text" name="VotingLocation" />
+            </li>
+            <li>
+                <label>Trenutni grad u kome se nalazite <span class="required">*</span></label>
+                <input class="field-long" type="text" name="CurrentLocation" />
+            </li>
+            <li>
+                <label>Broj telefona <span class="required">*</span></label>
+                <input class="field-long" type="text" name="PhoneNumber" />
+            </li>
+            <li>
+                <label>Email <span class="required">*</span></label>
+                <input class="field-long" type="text" name="Email" />
+            </li>
+            <li>
+                <input class="submit-button" id="submitApplication" type="submit" value="Prijavi se" />
+            </li>
+            <li>
+                <div id="signature-pad" class="m-signature-pad">
+                    <div class="m-signature-pad--body">
+                        <canvas id="signatureCanvas"></canvas>
+                    </div>
+                    <div class="m-signature-pad--footer">
+                        <div class="description">Potpis</div>
+                        <div class="left">
+                            <button type="button" class="button clear" data-action="clear">Obriši</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
+        <input type="hidden" name="Signature" id="Signature" />
     </form>
 </div>
 

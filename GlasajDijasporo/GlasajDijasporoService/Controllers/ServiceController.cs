@@ -26,31 +26,32 @@ namespace GlasajDijasporoService.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
 
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
             var contentFolder = HttpContext.Current.Server.MapPath("~/Content");
+            var pdfFileTemplate = contentFolder + @"/VotingRequestDocument.pdf";
 
-            var fileNameExisting = contentFolder + @"/VotingRequestDocument.pdf";
-            var fileNameNew = contentFolder + @"/New.pdf";
-
-            using (var existingFileStream = new FileStream(fileNameExisting, FileMode.Open))
+            using (var existingFileStream = new FileStream(pdfFileTemplate, FileMode.Open))
             {
-                using (var newFileStream = new FileStream(fileNameNew, FileMode.Create))
+                using (var newPdfFileStream = new MemoryStream())
                 {
                     var xCord = 296;
                     var yCord = 615;
 
                     var pdfReader = new PdfReader(existingFileStream);
-                    var stamper = new PdfStamper(pdfReader, newFileStream);
+                    var stamper = new PdfStamper(pdfReader, newPdfFileStream);
                     var content = stamper.GetOverContent(1);
 
                     content.BeginText();
-                   
                     content.SetFontAndSize(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, false), 14f);
 
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.FirstLastName, xCord, yCord, 0);
+
                     yCord -= 23;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.BirthPlaceDate, xCord, yCord, 0);
+
                     yCord -= 24;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.Gender, xCord, yCord, 0);
+
                     yCord -= 22;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.ParentName, xCord, yCord, 0);
 
@@ -85,7 +86,7 @@ namespace GlasajDijasporoService.Controllers
 
                     yCord -= 40;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.CurrentLocation, xCord - 163, yCord, 0);
-                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.CurrentLocation, xCord - 60, yCord, 0);
+                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, DateTime.Now.ToString("dd. MM. yyyy."), xCord - 60, yCord, 0);
 
                     yCord -= 55;
                     var bytes = Convert.FromBase64String(votingRequest.Signature.Split(',')[1]);
@@ -108,16 +109,13 @@ namespace GlasajDijasporoService.Controllers
 
                     stamper.Close();
                     pdfReader.Close();
+
+                    response.Content = new ByteArrayContent(newPdfFileStream.GetBuffer());
+                    response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+                    response.Content.Headers.ContentDisposition.FileName = "Zahtev.pdf";
+                    response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
                 }
             }
-
-            byte[] fileBytes = File.ReadAllBytes(fileNameNew);
-
-            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new ByteArrayContent(fileBytes);
-            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
-            response.Content.Headers.ContentDisposition.FileName = "Zahtev.pdf";
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
 
             return response;    
         }

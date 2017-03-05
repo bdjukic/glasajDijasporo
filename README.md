@@ -1,1 +1,1 @@
-# glasajDijasporo
+# Registracija za glasanje iz inostranstva

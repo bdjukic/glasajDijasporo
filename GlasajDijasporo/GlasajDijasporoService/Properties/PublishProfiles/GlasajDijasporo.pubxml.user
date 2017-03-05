@@ -230,7 +230,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/05/2017 13:41:00</publishTime>
     </File>
     <File Include="Content/signature-pad.css">
-      <publishTime>03/05/2017 14:32:42</publishTime>
+      <publishTime>03/05/2017 14:42:01</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>03/03/2017 20:27:52</publishTime>
@@ -299,7 +299,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/03/2017 20:28:14</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/05/2017 14:16:23</publishTime>
+      <publishTime>03/05/2017 14:44:12</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>03/03/2017 20:27:52</publishTime>

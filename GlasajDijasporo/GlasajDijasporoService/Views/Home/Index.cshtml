@@ -15,15 +15,19 @@
                 </ul>
             </li>
             </br>
-            </br>
             <li>
-                <label class="headerStyle">Laka registracija za glasanje iz inostranstva u tri koraka</label><br />
+                <label class="headerStyle">Laka registracija za glasanje iz inostranstva u par koraka</label><br />
             </li>
             <li>
-                <label class="stepStyle">1. Fotografiši pasoš telefonom.</label><br/>
+                <label class="stepStyle">1. Proveri <a href="http://birackispisak.mduls.gov.rs/javniportal">ovde</a> da li si već registrovan/a u birački spisak. Ako jesi, nastavi dalje, u suprotnom kontaktiraj ambasadu/konzulat.</label><br/>
+                </br>
             </li>
             <li>
-                <label class="stepStyle">2. Izaberi mesto glasanja:</label>
+                <label class="stepStyle">2. Fotografiši pasoš telefonom.</label><br />
+                </br>
+            </li>
+            <li>
+                <label class="stepStyle">3. Izaberi mesto glasanja:</label>
                 <br />
             <li>
                 <select name="VotingLocation" id="votingLocation" class="field-select" onchange="votingLocationSelected()">
@@ -64,7 +68,7 @@
                     <option value="Ambasada Srbije u Iraku|embsrbag@yahoo.com">Ambasada Srbije u Iraku</option>
                     <option value="Ambasada Srbije u Iranu|serbembteh@pol.ir">Ambasada Srbije u Iranu</option>
                     <option value="Konzulat Srbije u Italiji, Milano|info@gkrsmi.it">Konzulat Srbije u Italiji, Milano</option>
-                    <option value="Ambasada Srbije u Italiji, Rim|konzularno@ambroma.com">Ambasada Srbije u Italiji, Rim</option>
+                    <option value="Ambasada Srbije u Italiji, Rim|izbori2017@ambroma.com">Ambasada Srbije u Italiji, Rim</option>
                     <option value="Konzulat Srbije u Italiji, Trst|gkrstrst@spin.it">Konzulat Srbije u Italiji, Trst</option>
                     <option value="Ambasada Srbije u Izraelu|srbambil@netvision.net.il">Ambasada Srbije u Izraelu</option>
                     <option value="Ambasada Srbije u Japanu|embassy.tokyo@mfa.rs">Ambasada Srbije u Japanu</option>
@@ -130,7 +134,7 @@
             </br>
             </li>
             <li>
-                <label class="stepStyle">3. Popuni podatke za upis u birački spisak u inostranstvu i pritisni dugme "Popuni formular".</label><br />
+                <label class="stepStyle">4. Popuni podatke za upis u birački spisak u inostranstvu i pritisni dugme "Popuni formular".</label><br />
             </li>
             <li>
                 <label>Ime i prezime <span class="required">*</span></label>
@@ -250,7 +254,7 @@
                 <input class="field-long" type="text" name="ForeignCountryAddress" />
             </li>
             <li>
-                <label>Trenutno mesto u kome se nalazite <span class="required">*</span></label>
+                <label>Trenutno živiš u <span class="required">*</span></label>
                 <input class="field-long" type="text" name="CurrentLocation" />
             </li>
             <li>
@@ -297,7 +301,9 @@
                 <br />
                 <label class="stepStyle-bottom">Ovo je open-source projekat i source code možeš naći na <a href="https://github.com/bdjukic/glasajDijasporo">Githubu</a>.</label>
                 <br />
-                <label class="stepStyle-bottom">Primedbe i sugestije slati na bdjukic[at]gmail.com.</label>
+                <label class="stepStyle-bottom">Primedbe i sugestije slati na bdjukic[at]gmail.com ili na <a href="https://twitter.com/bdjukic">@@bdjukic</a>.</label>
+                <br />
+                <label class="stepStyle-bottom">Tajkuni i botovi stop.</label>
              </li>
         </ul>
         <input type="hidden" name="Signature" id="Signature" />

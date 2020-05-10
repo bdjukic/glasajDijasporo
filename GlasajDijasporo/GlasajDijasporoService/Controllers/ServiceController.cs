@@ -42,13 +42,17 @@ namespace GlasajDijasporoService.Controllers
                     var content = stamper.GetOverContent(1);
 
                     content.BeginText();
-                    content.SetFontAndSize(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, false), 14f);
+                    content.SetFontAndSize(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, false), 12f); //Reduced font size to be able to put birth date and birth place in the same line
 
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.FirstLastName, xCord, yCord, 0);
 
-                    yCord -= 23;
-                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.BirthPlaceDate, xCord, yCord, 0);
+                    yCord -= 23; //first we will put the birth date, and then the birth place
+                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.BirthDate, xCord, yCord, 0);
 
+                    xCord += 65; //Move the input so you don't cover the date field
+                    content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.BirthPlace, xCord, yCord, 0);
+
+                    xCord -= 65; //return the input to the left part of the form
                     yCord -= 24;
                     content.ShowTextAligned(PdfContentByte.ALIGN_LEFT, votingRequest.Gender, xCord, yCord, 0);
 
@@ -117,7 +121,7 @@ namespace GlasajDijasporoService.Controllers
 
                     response.Content = new ByteArrayContent(newPdfFileStream.GetBuffer());
                     response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
-                    response.Content.Headers.ContentDisposition.FileName = "Zahtev.pdf";
+                    response.Content.Headers.ContentDisposition.FileName = "Zahtev za glasanje 2020.pdf"; //For easier finding
                     response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
                 }
             }

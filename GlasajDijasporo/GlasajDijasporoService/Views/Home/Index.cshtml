@@ -264,12 +264,16 @@
                 <label class="stepStyle">4. Popuni podatke za upis u birački spisak u inostranstvu i pritisni dugme "Popuni formular".</label><br />
             </li>
             <li>
-                <label>Ime i prezime <span class="required">*</span></label>
+                <label>Ime i prezime (latinicom) <span class="required">*</span></label>
                 <input class="field-long" type="text" name="FirstLastName" />
             </li>
             <li>
-                <label>Datum i mesto rođenja <span class="required">*</span></label>
-                <input class="field-long" type="text" name="BirthPlaceDate" />
+                <label>Datum rođenja <span class="required">*</span></label>
+                <input class="field-long" type="date" name="BirthDate" />
+            </li>
+            <li>
+                <label>Mesto rođenja <span class="required">*</span></label>
+                <input class="field-long" type="text" name="BirthPlace" />
             </li>
             <li>
                 <label>Pol</label>
@@ -279,7 +283,7 @@
                 </select>
             </li>
             <li>
-                <label>Ime jednog od roditelja <span class="required">*</span></label>
+                <label>Ime jednog od roditelja (latinicom) <span class="required">*</span></label>
                 <input class="field-long" type="text" name="ParentName" />
             </li>
             <li>
@@ -291,11 +295,11 @@
                 <input class="field-long" type="number" name="PassportId" />
             </li>
             <li>
-                <label>Adresa prebivališta u Srbiji</label>
+                <label>Adresa prebivališta u Srbiji (latinicom)</label>
                 <input class="field-long" type="text" name="HomeCountryAddress" />
             </li>
             <li>
-                <label>Adresa prebivališta za internno raseljena lica</label>
+                <label>Adresa prebivališta za internno raseljena lica (latinicom)</label>
                 <input class="field-long" type="text" name="TemporaryAddress" />
             </li>
             <li>
@@ -492,20 +496,20 @@
                 </select>
             </li>
             <li>
-                <label>Adresa u inostranstvu <span class="required">*</span></label>
+                <label>Adresa u inostranstvu (latinicom) <span class="required">*</span></label>
                 <input class="field-long" type="text" name="ForeignCountryAddress" />
             </li>
             <li>
-                <label>Trenutno živiš u <span class="required">*</span></label>
+                <label>Trenutno živiš u (latinicom) <span class="required">*</span></label>
                 <input class="field-long" type="text" name="CurrentLocation" />
             </li>
             <li>
                 <label>Broj telefona <span class="required">*</span></label>
-                <input class="field-long" type="text" name="PhoneNumber" />
+                <input class="field-long" type="tel" name="PhoneNumber" />
             </li>
             <li>
                 <label>Email <span class="required">*</span></label>
-                <input class="field-long" type="text" name="Email" />
+                <input class="field-long" type="email" name="Email" />
             </li>
             <li>
                 <div id="signature-pad" class="m-signature-pad">

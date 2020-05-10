@@ -8,7 +8,8 @@ namespace GlasajDijasporoService.Model
     public class VotingRequest
     {
         public string FirstLastName { get; set; }
-        public string BirthPlaceDate { get; set; }
+        public string BirthPlace { get; set; }
+        public string BirthDate { get; set; }
         public string Gender { get; set; }
         public string ParentName { get; set; }
         public string PersonalId { get; set; }
